@@ -54,6 +54,7 @@ function displayNews(articles) {
     });
 }
 
+// This is the comment for differnce
 // Fetch news when search button is clicked
 searchButton.addEventListener("click", () => {
     const query = searchInput.value.trim();
