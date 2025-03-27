@@ -5,6 +5,7 @@ const BASE_URL = 'https://newsdata.io/api/1/news';
 const newsContainer = document.getElementById("news-container");
 const searchInput = document.getElementById("search-input");
 const searchButton = document.getElementById("search-button");
+const IMG404 = "./img/404.jpg"
 
 // Fetch news articles
 async function fetchNews(query = "") {
@@ -42,12 +43,11 @@ function displayNews(articles) {
     articles.forEach((article) => {
         const newsCard = document.createElement("div"); //separate code 
         newsCard.classList.add("news-card");
-
         newsCard.innerHTML = `
-            <img src="${article.image_url || './img/404.jpg'}" 
+            <img src="${article.image_url || IMG404}" 
             onerror=${
                 function() {
-                this.src = "./img/404.jpg";
+                this.src = IMG404;
                 }
             
         } alt="News Image">
