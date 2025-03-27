@@ -1,0 +1,166 @@
+/* ===== Global Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    /* background: #000000; */
+}
+
+h1, h2, h3 {
+    font-family: 'Arial', sans-serif;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #0078D4;
+    padding: 15px;
+    color: white;
+    font-size: 18px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    text-align: center;
+    margin: 0 20px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #005aa7;
+}
+
+/* ===== Search Section ===== */
+.search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background-color: #e4e4e4;
+}
+
+#search-input {
+    width: 100%;
+    max-width: 600px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 18px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+#search-input:focus {
+    outline: none;
+    border-color: #0078D4;
+    box-shadow: 0 0 10px rgba(0, 120, 212, 0.2);
+}
+
+#search-button {
+    padding: 18px 40px; /* Increased padding to make the button broader */
+    background-color: #0078D4;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 20px; /* Increased font size */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 250px; /* Set max width to ensure the button doesn't get too large */
+    text-align: center;
+}
+
+#search-button:hover {
+    background-color: #005aa7;
+}
+
+/* ===== News Section ===== */
+#news-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.news-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.news-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.news-content {
+    padding: 20px;
+}
+
+.news-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.news-description {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.read-more {
+    font-size: 16px;
+    text-decoration: none;
+    color: #0078D4;
+    padding: 10px 15px;
+    border: 1px solid #0078D4;
+    border-radius: 25px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.read-more:hover {
+    background-color: #0078D4;
+    color: white;
+    border-color: #0078D4;
+}
+
+/* ===== Responsive Styles ===== */
+@media (max-width: 768px) {
+    #search-input {
+        width: 80%;
+    }
+
+    #news-container {
+        grid-template-columns: 1fr;
+    }
+
+    .navbar {
+        font-size: 20px;
+    }
+}
