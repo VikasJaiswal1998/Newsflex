@@ -5,6 +5,7 @@ const BASE_URL = 'https://newsdata.io/api/1/news';
 const newsContainer = document.getElementById("news-container");
 const searchInput = document.getElementById("search-input");
 const searchButton = document.getElementById("search-button");
+const IMG404 = "./img/404.jpg"
 
 // Fetch news articles
 async function fetchNews(query = "") {
@@ -40,11 +41,16 @@ function displayNews(articles) {
     newsContainer.innerHTML = ""; // Clear previous news
 
     articles.forEach((article) => {
-        const newsCard = document.createElement("div");
+        const newsCard = document.createElement("div"); //separate code 
         newsCard.classList.add("news-card");
-
         newsCard.innerHTML = `
-            <img src="${article.image_url || 'https://via.placeholder.com/300'}" alt="News Image">
+            <img src="${article.image_url || IMG404}" 
+            onerror=${
+                function() {
+                this.src = IMG404;
+                }
+            
+        } alt="News Image">
             <h3>${article.title}</h3>
             <p>${article?.description?.substring(0,500) || "No description available."}</p>
             <a href="${article.source_url}" target="_blank">Read more</a>
@@ -63,6 +69,5 @@ searchButton.addEventListener("click", () => {
 
 // Load default news when page opens
 window.onload = () => {
-    console.log("on refersh it will load");
     fetchNews();
 };
