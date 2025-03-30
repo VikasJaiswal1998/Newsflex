@@ -18,78 +18,187 @@ h1, h2, h3 {
     font-family: 'Arial', sans-serif;
 }
 
-/* ===== Navbar ===== */
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Basic Styling for the Navbar */
 .navbar {
+    background-color: #d2b721; /* Light gray background */
+    padding: 1px 2px;
+    height: 80px;
+    position:relative; /* Stick to the top on scroll */
+    top: 0;
+    z-index: 100; /* Ensure it stays above other content */
     display: flex;
-    justify-content: center;
-    background-color: #0078D4;
-    padding: 15px;
-    color: white;
-    font-size: 18px;
-}
-
-.navbar a {
-    color: white;
-    text-decoration: none;
-    padding: 15px;
-    text-align: center;
-    margin: 0 20px;
-    transition: background-color 0.3s ease;
-}
-
-.navbar a:hover {
-    background-color: #005aa7;
-}
-
-/* ===== Search Section ===== */
-.search-container {
-    display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    padding: 40px 20px;
-    background-color: #e4e4e4;
+    padding:10px 70px;
+    flex-wrap: wrap;
 }
 
-#search-input {
-    width: 100%;
-    max-width: 600px;
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 25px;
-    font-size: 18px;
-    background-color: #fff;
-    transition: all 0.3s ease;
+
+/* Styling for the Brand */
+.navbar-brand {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #02070d; /* Primary blue color */
+    text-decoration: none;
+}
+
+
+.inner-container-fluid{
+    display: flex;
+    align-items: center;
+    gap:5px;
+    justify-content: space-between;
+}
+
+/* Styling for the regular links */
+.navbar-items {
+    color: #000000;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+}
+
+.navbar-items:hover {
+    background-color: #e9ecef;
+}
+
+/* Styling for the Search Form */
+.d-flex {
+    display: flex;
+    align-items: center;
+    gap:5px;
+    justify-content: space-between;
+}
+
+.form-control {
+    padding: 8px 12px;
+    border: 2px solid #0d60b3;
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: all 0.1s ease;
+    background-color: #fff3f3;
+}
+
+#search-input::placeholder {
+    color: rgb(0, 0, 0);
+    opacity: 1; /* Ensures full opacity */
 }
 
 #search-input:focus {
     outline: none;
-    border-color: #0078D4;
-    box-shadow: 0 0 10px rgba(0, 120, 212, 0.2);
+    border-color: #fffffff3;
+    color: rgb(0, 0, 0);
+    box-shadow: 0 0 10px rgba(234, 238, 241, 0.2);
 }
-
-#search-button {
-    padding: 18px 40px; /* Increased padding to make the button broader */
-    background-color: #0078D4;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    font-size: 20px; /* Increased font size */
-    cursor: pointer;
-    transition: all 0.3s ease;
-    width: 100%;
-    max-width: 250px; /* Set max width to ensure the button doesn't get too large */
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    border-radius: 5px;
+    color: #000000;
+    background-color: #fdfdfd;
     text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    border: 2px solid #0f43ff;
+    padding: 8px 12px;
+    font-size: 1rem;
+    transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out, border-color 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+    
 }
 
-#search-button:hover {
-    background-color: #005aa7;
+.btn:hover {
+    color: #fff;
+    background-color: #000000;
+    border-color: #a04986;
+    color: rgb(255, 255, 255) !important;
 }
 
-/* ===== News Section ===== */
+
+/* Responsive Navbar - Mobile (width ≤ 768px) */
+@media (max-width: 801px) {
+    .navbar {
+        flex-direction: column; /* Stack items vertically */
+        height: auto; /* Allow dynamic height */
+        padding: 10px; /* Reduce padding */
+        text-align: center;
+    }
+
+    .inner-container-fluid {
+        flex-direction: column; /* Stack logo, links, and search vertically */
+        gap: 5px; /* Reduce spacing */
+    }
+
+    .navbar-brand {
+        font-size: 1.5rem; /* Reduce font size */
+    }
+
+    .navbar-items {
+        display: block; /* Make links full width */
+        width: 100%; /* Stretch links to full width */
+        text-align: center; /* Center text */
+        margin: 5px 0; /* Reduce margin */
+    }
+
+    .d-flex {
+        flex-direction: column; /* Stack search input & button */
+        width: 100%;
+    }
+
+    .form-control {
+        width: 90%; /* Make search input wider */
+        margin: 5px auto; /* Center input */
+    }
+
+    .btn {
+        width: 50%; /* Make button wider */
+        margin: 5px auto; /* Center button */
+    }
+}
+
+/* Extra Small Screens (width ≤ 480px) */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 5px; /* Reduce padding */
+    }
+
+    .navbar-brand {
+        font-size: 1.3rem; /* Make brand name smaller */
+    }
+
+    .navbar-items {
+        padding: 5px 0; /* Reduce padding */
+        font-size: 0.9rem; /* Reduce font size */
+    }
+
+    .form-control {
+        width: 100%; /* Full width on very small screens */
+    }
+
+    .btn {
+        width: 100%; /* Full width button */
+    }
+}
+
+
+
+
+
+
+
+/* ===== News container Section ===== */
 #news-container {
-    display: grid;
+    display:grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
     padding: 40px 20px;
@@ -98,7 +207,7 @@ h1, h2, h3 {
 }
 
 .news-card {
-    background-color: white;
+    background-color: rgb(188, 210, 235);
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -147,11 +256,20 @@ h1, h2, h3 {
 .read-more:hover {
     background-color: #0078D4;
     color: white;
-    border-color: #0078D4;
+    border-color: #d0d400;
 }
 
+
+
+
+
+
+
+
+
+
 /* ===== Responsive Styles ===== */
-@media (max-width: 768px) {
+@media (max-width: 810px) {
     #search-input {
         width: 80%;
     }

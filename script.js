@@ -30,7 +30,8 @@ async function fetchNews(query = "") {
         }
 
         displayNews(data.results);
-    } catch (error) {
+    } 
+    catch (error) {
         console.error("Error fetching news:", error);
         newsContainer.innerHTML = "<p>Failed to load news. Please try again later.</p>";
     }
